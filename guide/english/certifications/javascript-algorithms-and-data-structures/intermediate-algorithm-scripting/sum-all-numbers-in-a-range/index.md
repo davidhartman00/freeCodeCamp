@@ -117,6 +117,30 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator' target='_blank' rel='nofollow'>Spread Operator</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max' target='_blank' rel='nofollow'>Using Spread Operator in Math.max()</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+
+    function sumAll(arr) {
+      let arr2 = [...arr]
+      return arr2.sort((a,b)=> a-b).reduce((acc,cur) => (cur - acc + 1) * (acc + cur) / 2)
+    }
+
+    sumAll([1, 4]);
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@DavidHartman/anothersolution' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Because we will be using `.sort()`, which mutates the array it `.sort()` is called upon, we make a copy of `arr` using the Spread Operator.
+*   Order the array from lowest to highest using `.sort()`.
+*   Use the `.reduce()` function to run the math calculations.
+
+#### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce' target='_blank' rel='nofollow'>Array.prototype.reduce()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort' target='_blank' rel='nofollow'>Array.prototype.sort()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator' target='_blank' rel='nofollow'>Spread Operator</a>
+
+
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
